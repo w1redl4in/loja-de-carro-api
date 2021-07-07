@@ -25,6 +25,14 @@ class UserService {
       throw new Error('Erro ao criar usuário');
     }
   }
+  
+  async apagar(id: string): Promise<any> {
+    try {
+      return this.userRepository.delete(id)
+    } catch (error) {
+      throw new Error('Erro ao deletar usuario');
+    }
+  }
 }
 
 export default new UserService();

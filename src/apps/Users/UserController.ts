@@ -15,6 +15,7 @@ export const update = (_: Request, res: Response) => {
   return res.json({ user: 'created' });
 };
 
-export const remove = (_: Request, res: Response) => {
-  return res.json({ user: 'created' });
+export const apagar = async (req: Request, res: Response) => {
+  const response = await UserService.apagar(req.params.id);
+  return res.json(response);
 };

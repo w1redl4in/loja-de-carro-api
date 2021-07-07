@@ -12,6 +12,7 @@ const route = Router();
 
 route.get('/', controller.list);
 route.post('/', controller.create);
+route.delete('/:id', controller.apagar);
 // route.get('/:id', controller.findOne);
 // route.put('/', controller.update);
 // route.delete('/', controller.deleteOne);
