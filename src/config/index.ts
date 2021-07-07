@@ -6,10 +6,11 @@ const connection = createConnections([
   {
     name: 'mysql',
     type: 'mysql',
-    host: 'db',
+    host: 'localhost',
     port: 3306,
-
+    username: 'root',
     password: 'example',
+    database: 'carshop',
     entities: [User],
     synchronize: true,
   },
