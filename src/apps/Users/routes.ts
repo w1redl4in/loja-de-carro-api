@@ -10,9 +10,9 @@ const route = Router();
 // PATCH - Alterar dados existentes
 // DELETE - Apaga/Remove dados
 
-// route.get('/', controller.list);
+route.get('/', controller.list);
+route.post('/', controller.create);
 // route.get('/:id', controller.findOne);
-route.get('/', controller.create);
 // route.put('/', controller.update);
 // route.delete('/', controller.deleteOne);
 
