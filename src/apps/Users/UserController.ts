@@ -11,9 +11,10 @@ export const list = async (_: Request, res: Response) => {
   return res.json(response);
 };
 
-export const update = (_: Request, res: Response) => {
-  return res.json({ user: 'created' });
-};
+export const alterar = async (req: Request, res: Response) => {
+  const response = await UserService.alterar(req.params.id, req.body);
+  return res.json(response);
+}
 
 export const apagar = async (req: Request, res: Response) => {
   const response = await UserService.apagar(req.params.id);
