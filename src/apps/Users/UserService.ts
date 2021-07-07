@@ -8,9 +8,19 @@ class UserService {
     this.userRepository = getConnection('mysql').getRepository(User);
   }
 
-  async create(user: User): Promise<User> {
+  async create(user: any): Promise<User> {
     try {
-      return this.userRepository.save(user);
+      const userCreated = await this.userRepository.save(user);
+      return userCreated;
+    } catch (error) {
+      throw new Error('Erro ao criar usuário');
+    }
+  }
+
+  async findAll(): Promise<User[]> {
+    try {
+      const users = await this.userRepository.find();
+      return users;
     } catch (error) {
       throw new Error('Erro ao criar usuário');
     }
