@@ -1,21 +1,22 @@
-import { createConnection } from 'typeorm';
+import { config } from 'dotenv';
 
-import { User } from '@apps/Users/User.entity';
+const envfile = `.env.${process.env.NODE_ENV}`;
+const envdir = process.cwd();
 
-const connection = createConnection({
-  name: 'mysql',
-  type: 'mysql',
-  host: 'localhost',
-  port: 3306,
-  username: 'root',
-  password: 'example',
-  database: 'carshop',
-  entities: [User],
-  synchronize: true,
-  migrations: ['src/config/migrations/*.ts'],
-  cli: {
-    migrationsDir: 'src/config/migrations',
-  },
-});
+config({ path: `${envdir}/${envfile}` });
 
-export default connection;
+export const server = {
+  port: process.env.PORT,
+  env: process.env.ENV,
+};
+
+export const dbConnection = {
+  name: String(process.env.MYSQL_NAME),
+  type: String(process.env.MYSQL_TYPE),
+  host: String(process.env.MYSQL_HOST),
+  port: Number(process.env.MYSQL_PORT),
+  username: String(process.env.MYSQL_USERNAME),
+  password: String(process.env.MYSQL_PASSWORD),
+  database: String(process.env.MYSQL_DATABASE),
+  synchronize: server.env === 'dev',
+};
