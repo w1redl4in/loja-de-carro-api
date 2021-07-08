@@ -7,7 +7,7 @@ config({ path: `${envdir}/${envfile}` });
 
 export const server = {
   port: process.env.PORT,
-  env: process.env.ENV,
+  env: process.env.NODE_ENV,
 };
 
 export const dbConnection = {
