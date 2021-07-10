@@ -26,16 +26,16 @@ class App {
   constructor() {
     this.app = express();
     this.session = createNamespace('request');
-    this.errorHandle();
     this.middlewares();
     this.routes();
+    this.errorHandle();
   }
 
   private middlewares(): void {
     this.app.use(express.json());
     this.app.use(cors());
 
-    const reqId = require('express-request-id'); // essa lib não tem tipagem
+    const reqId = require('express-request-id');
     this.app.use(reqId());
     const attachContext: RequestHandler = (
       _: Request,
