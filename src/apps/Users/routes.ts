@@ -1,5 +1,7 @@
 import { Router } from 'express';
 
+import 'express-async-errors';
+
 import * as controller from './UserController';
 
 const route = Router();
@@ -14,8 +16,5 @@ route.get('/', controller.list);
 route.post('/', controller.create);
 route.delete('/:id', controller.apagar);
 route.put('/:id', controller.alterar);
-// route.get('/:id', controller.findOne);
-// route.put('/', controller.update);
-// route.delete('/', controller.deleteOne);
 
 export default route;
