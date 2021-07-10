@@ -55,7 +55,7 @@ Work in progress
 
 ```
 
-### Swagger
+## Swagger
 
 ```bash
 
@@ -63,12 +63,11 @@ localhost:3333/carshop/docs
 
 ```
 
-### Mais sobre o projeto
+## Mais sobre o projeto
 - [Notion](https://www.notion.so/w1redl4in/CarShop-b39cf45e669d44ab987bb29c92dd68a4)
 
 ## Entre em contato
 
-### 	Contribuidores
 
 - [Felipe Austríaco](https://felipeaustriaco.dev)
 - [Felipe Austríaco](https://felipeaustriaco.dev)
