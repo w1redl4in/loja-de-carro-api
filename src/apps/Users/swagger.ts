@@ -4,21 +4,6 @@ const paths = {
       tags: ['User'],
       summary: 'User',
       description: 'Lista todos os usuários',
-      security: [
-        {
-          Bearer: [],
-        },
-      ],
-      // parameters: [
-      //   {
-      //     in: 'body',
-      //     name: 'update',
-      //     required: true,
-      //     schema: {
-      //       $ref: '#/definitions/UserPayload',
-      //     },
-      //   },
-      // ],
       responses: {
         200: {
           description: 'OK',
