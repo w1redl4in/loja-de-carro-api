@@ -9,7 +9,7 @@ class HealthCheckService {
 
       if (!databaseConnection) {
         throw new CustomError({
-          code: 'NO_CONNECTION',
+          code: 'NO_CONNECTION_WITH_DATABASE',
           message: 'Sem conexão com o banco',
           status: 500,
         });
@@ -24,7 +24,7 @@ class HealthCheckService {
       if (error instanceof CustomError) throw error;
 
       throw new CustomError({
-        code: 'GENERIC_ERROR',
+        code: 'HEALTHCHECK_GENERIC_ERROR',
         message: 'Erro genérico',
         status: 500,
       });
