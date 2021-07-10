@@ -6,10 +6,10 @@ API do projeto Loja de Carros, o propósito do projeto é dar uma oportunidade d
 
 ## Dependências
 
-[node.js](https://nodejs.org/en/)
-[yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable)
-[docker](https://www.google.com/search?q=docker)
-[docker-compose](https://www.google.com/search?q=docker-compose)
+[node.js](https://nodejs.org/en/)<br />
+[yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable)<br />
+[docker](https://www.google.com/search?q=docker)<br />
+[docker-compose](https://www.google.com/search?q=docker-compose)<br />
 
 
 
