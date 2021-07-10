@@ -17,6 +17,7 @@ import { ErrorHandler } from 'express-handler-errors';
 
 import 'reflect-metadata';
 import { createNamespace, Namespace } from 'continuation-local-storage';
+import swaggerRoutes from './swagger.routes';
 
 class App {
   public readonly app: Application;
@@ -27,6 +28,7 @@ class App {
     this.app = express();
     this.session = createNamespace('request');
     this.middlewares();
+    this.configSwagger();
     this.routes();
     this.errorHandle();
   }
@@ -75,6 +77,11 @@ class App {
 
   private routes(): void {
     this.app.use('/carshop', routes);
+  }
+
+  private async configSwagger(): Promise<void> {
+    const swagger = await swaggerRoutes.load();
+    this.app.use(swagger);
   }
 }
 

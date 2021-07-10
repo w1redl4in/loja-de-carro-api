@@ -10,7 +10,7 @@ connection.then(() => {
   require('./app').default.app.listen(
     server.port,
     logger.info(
-      `Application is listening on port: ${server.port} - server mode: ${server.env}`
+      `Application is listening on port: ${server.port}/carshop/resources - server mode: ${server.env}`
     )
   );
 });
