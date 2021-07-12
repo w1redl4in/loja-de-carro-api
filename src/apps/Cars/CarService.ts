@@ -12,13 +12,26 @@ class CarService {
 
   async create(car: any): Promise<Car> {
     try {
-      console.log("chegou aq", car)  
+      //console.log("chegou aq", car)  
       const carCreated = await this.carRepository.save(car);
       return carCreated;
     } catch (error) {
       throw new CustomError({
         code: 'CREATE_CAR_ERROR',
         message: 'Erro ao criar o carro',
+        status: 500,
+      });
+    }
+  }
+  async findAll(): Promise<Car[]> {
+    try {
+      //console.log("chegou aq", car)  
+      const cars = await this.carRepository.find();
+      return cars;
+    } catch (error) {
+      throw new CustomError({
+        code: 'LIST_CAR_ERROR',
+        message: 'Erro ao listar o carro',
         status: 500,
       });
     }
