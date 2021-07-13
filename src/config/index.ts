@@ -18,5 +18,5 @@ export const dbConnection = {
   username: String(process.env.MYSQL_USERNAME),
   password: String(process.env.MYSQL_PASSWORD),
   database: String(process.env.MYSQL_DATABASE),
-  synchronize: server.env === 'dev',
+  synchronize: server.env === 'dev' || 'docker',
 };
