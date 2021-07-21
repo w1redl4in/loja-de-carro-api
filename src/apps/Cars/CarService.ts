@@ -64,5 +64,29 @@ class CarService {
     }
   }
  
+  async apagar(id: string): Promise<any> {
+    try {
+      const car = await this.carRepository.findOne(id);
+
+      if (!car) {
+        throw new CustomError({
+          code: 'CAR_NOT_FOUND',
+          message: 'Carro não encontrado',
+          status: 404,
+        });
+      }
+
+      await this.carRepository.delete(car.id);
+    } catch (error) {
+      if (error instanceof CustomError) {
+        throw error;
+      }
+      throw new CustomError({
+        code: 'DELETE_CAR_ERROR',
+        message: 'Erro ao apagar carro',
+        status: 500,
+      });
+    }
+  }
 }
   export default new CarService();
