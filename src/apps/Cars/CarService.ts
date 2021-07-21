@@ -36,5 +36,33 @@ class CarService {
       });
     }
   }
+  async alterar(id: string, body: any): Promise<any> {
+    try {
+      const updateResult = await this.carRepository.update(id, body);
+
+      if (!updateResult.affected) {
+        throw new CustomError({
+          code: 'UPDATE_CAR_ERROR',
+          message: 'Carro não encontrado ou payload incorreto',
+          status: 422,
+        });
+      }
+
+      const updatedCar = await this.carRepository.findOne(id);
+
+      return updatedCar;
+    } catch (error) {
+      if (error instanceof CustomError) {
+        throw error;
+      }
+
+      throw new CustomError({
+        code: 'UPDATE_CAR_ERROR',
+        message: 'Erro ao atualizar carro',
+        status: 500,
+      });
+    }
+  }
+ 
 }
   export default new CarService();
