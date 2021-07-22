@@ -3,6 +3,7 @@ import { Router } from 'express';
 import 'express-async-errors';
 
 import * as controller from './UserController';
+import { validateCreate } from './validator';
 
 const route = Router();
 
@@ -13,7 +14,7 @@ const route = Router();
 // DELETE - Apaga/Remove dados
 
 route.get('/', controller.list);
-route.post('/', controller.create);
+route.post('/', validateCreate, controller.create);
 route.delete('/:id', controller.apagar);
 route.put('/:id', controller.alterar);
 
