@@ -60,6 +60,12 @@ class AuthService {
       });
     }
   }
+
+  verifyToken(token: { token: string }) {
+    const { token: Token } = token;
+    const verifiedToken = jwt.verify(Token, auth.secret);
+    return verifiedToken;
+  }
 }
 
 export default new AuthService();
