@@ -13,7 +13,7 @@ const route = Router();
 
 route.get('/', controller.list);
 route.post('/', controller.create);
-//route.delete('/:id', controller.apagar);
-//route.put('/:id', controller.alterar);
+route.delete('/:id', controller.apagar);
+route.put('/:id', controller.alterar);
 
 export default route;
