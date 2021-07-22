@@ -20,3 +20,8 @@ export const dbConnection = {
   database: String(process.env.MYSQL_DATABASE),
   synchronize: server.env === 'dev' || 'docker',
 };
+
+export const auth = {
+  secret: String(process.env.AUTH_SECRET),
+  expiresIn: String(process.env.EXPIRES_IN),
+};
