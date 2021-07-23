@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 import logger from '@middlewares/logger';
-import { dbConnection, server } from './config';
+import { dbConnection, server, auth } from './config';
 import connection from './config/db';
 
 connection
@@ -16,6 +16,6 @@ connection
     );
   })
   .catch((err) => {
-    logger.error('Environment variables', { dbConnection, server });
+    logger.error('Environment variables', { dbConnection, server, auth });
     logger.error(err);
   });
